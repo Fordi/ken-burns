@@ -29,9 +29,13 @@ const styles = css`
     min-height: 100%;
     height: auto;
     background: #000;
+    background-position: center;
+    background-size: cover;
     backface-visibility: hidden;
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
   }
-  .kenBurnsImage.visible img {
+  .kenBurnsImage.visible .img {
     transform: scale(1.25) rotate(0deg) translate(0, 0) !important;
   }
   .intro {
@@ -40,8 +44,7 @@ const styles = css`
     padding: .2em .6em;
     cursor: pointer;
     color: #FFF;
-    font-size: 2em;
-    max-width: 26em;
+    max-width: 50%;
     left: 0;
     bottom: 0;
     text-shadow: 0 0 0.25em black;
@@ -96,9 +99,8 @@ const KenBurnsStack = ({
               title=${headline}
               style=${{
                 transform: `scale(${scale}) rotate(${rotate}deg) translate(${translate[0]}px, ${translate[1]}px)`,
-                transition: `transform ${fadeTime}s`,
+                transitionDuration: `${fadeTime}s`,
                 backgroundImage: `url('${url}')`,
-                backgroundPosition: 'center',
               }}
             />
             <div className=${styles.intro}>
