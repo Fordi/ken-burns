@@ -1,7 +1,6 @@
 import html from 'html';
 import css from 'css';
 import { useState, useEffect } from 'preact/hooks';
-import useUid from 'useUid';
 
 const styles = css`
   .kenBurnsStack {
@@ -61,7 +60,7 @@ const KenBurnsStack = ({
 }) => {
   const [extended] = useState(() => images.map(image => ({
     ...image,
-    scale: 1 + Math.random() * 0.5,
+    scale: 1.1 + Math.random() * 0.4,
     rotate: Math.random() * 4 - 2,
     translate: [0, 0],
   })));
