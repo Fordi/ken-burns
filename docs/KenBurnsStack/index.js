@@ -36,13 +36,16 @@ const styles = css`
     transform: scale(1.25) rotate(0deg) translate(0, 0) !important;
   }
   .intro {
-    position: relative;
+    position: absolute;
     margin: 2em;
     padding: .2em .6em;
     cursor: pointer;
     color: #FFF;
     font-size: 2em;
     max-width: 26em;
+    left: 0;
+    bottom: 0;
+    text-shadow: 0 0 0.25em black;
   }
   .intro h1 {
     margin-bottom: .5em;
@@ -99,7 +102,7 @@ const KenBurnsStack = ({
                 backgroundPosition: 'center',
               }}
             />
-            <div class="intro">
+            <div className=${styles.intro}>
               <h1>${headline}</h1>
               <p>${description}</p>
             </div>
