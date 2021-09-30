@@ -36,7 +36,7 @@ const styles = css`
     transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
   }
   .kenBurnsImage.visible .img {
-    transform: scale(1.25) rotate(0deg) translate(0, 0) !important;
+    transform: scale(1.6) rotate(0deg) translate(0, 0) !important;
   }
   .intro {
     position: absolute;
