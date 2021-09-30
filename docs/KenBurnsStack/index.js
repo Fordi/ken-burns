@@ -96,7 +96,6 @@ const KenBurnsStack = ({
           >
             <div 
               className=${styles.img}
-              title=${headline}
               style=${{
                 transform: `scale(${scale}) rotate(${rotate}deg) translate(${translate[0]}px, ${translate[1]}px)`,
                 transitionDuration: `${fadeTime}s`,
