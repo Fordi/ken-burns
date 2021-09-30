@@ -63,8 +63,8 @@ const KenBurnsStack = ({
 }) => {
   const [extended] = useState(() => images.map(image => ({
     ...image,
-    scale: 1.1 + Math.random() * 0.4,
-    rotate: Math.random() * 4 - 2,
+    scale: 1.1 + Math.random() * 1,
+    rotate: Math.random() * 8 - 4,
     translate: [0, 0],
   })));
   const [visible, setVisible] = useState(-1);
