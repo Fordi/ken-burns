@@ -10,9 +10,15 @@ const styles = css`
   }
 `;
 
+const { fade } = window.location.search.replace(/^\?/, '').split('&').reduce((obj, part) => {
+  const [name, ...value] = part.split('=');
+  obj[decodeURIComponent(name)] = decodeURIComponent(value.join('='));
+  return obj;
+}, {});
+
 const App = () => {
   return html`
-    <${KenBurnsStack} className=${styles.app} fadeTime=${fadeTime} images=${images} />
+    <${KenBurnsStack} className=${styles.app} fadeTime=${fade || fadeTime} images=${images} />
   `;
 };
 
