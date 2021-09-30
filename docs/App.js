@@ -7,6 +7,7 @@ const styles = css`
   .app {
     width: 100vw;
     height: 100vh;
+    cursor: none;
   }
 `;
 
