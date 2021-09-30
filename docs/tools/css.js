@@ -23,7 +23,11 @@ const aniKwRx = /infinite|none|forwards|backwards|both|paused|running|normal|rev
 const insertRule = (rule, id) => {
   const classNames = allRules(rule).reduce((cls, r) => {
     if (r.type === CSSRule.KEYFRAMES_RULE) {
-      r.name = appendId(r.name, id);
+      const animId = appendId(r.name, id);
+      if (!r.name.endsWith(`_${id}`)) {
+        cls[r.name] = animId;
+      }
+      r.name = animId;
     }
     if (r.style) {
       if (r.style['animation-name']) {
